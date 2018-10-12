@@ -1,13 +1,14 @@
 ---
 # tasks file for tomchinna
 - name: install tomcat
-   yum:
+  yum:
     name: tomcat
     state: present
 - name: Open the Tomcat configuration file
-   template:
+  template:
     src: template/tomcatconfig.j2
     dest: /usr/share/tomcat/conf/tomcat.conf
+  notify: tomstart
 - name: install packages
    yum:
      name: "{{ items }}"
