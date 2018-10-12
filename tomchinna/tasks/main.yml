@@ -10,14 +10,14 @@
     dest: /usr/share/tomcat/conf/tomcat.conf
   notify: tomstart
 - name: install packages
-   yum:
+  yum:
      name: "{{ items }}"
      state: present
   with_items:
     - tomcat-webapps
     - tomcat-admin-webapps
 - name: tomcatuserconfig
-   template:
-    src: template/tomuser.j2
-    dest: /usr/share/tomcat/conf/tomcat-users.xml
+  template:
+     src: template/tomuser.j2
+     dest: /usr/share/tomcat/conf/tomcat-users.xml
   notify: tomrestart
