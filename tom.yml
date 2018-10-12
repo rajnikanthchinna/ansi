@@ -1,0 +1,5 @@
+---
+- hosts: all
+  become: yes
+  roles:
+    - {role: tomchinna, when: ansible_os_family=="RedHat"}

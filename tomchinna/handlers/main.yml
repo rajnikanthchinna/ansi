@@ -1,2 +1,11 @@
 ---
 # handlers file for tomchinna
+
+- name: tomstart
+  service:
+    name: tomcat
+    state: started
+- name: tomrestart
+  service:
+    name: tomcat
+    state: restarted
