@@ -6,7 +6,7 @@
     state: present
 - name: Open the Tomcat configuration file
   template:
-    src: template/tomcatconfig.j2
+    src:  template/tomcatconfig.j2
     dest: /usr/share/tomcat/conf/tomcat.conf
   notify: tomstart
 - name: install packages
